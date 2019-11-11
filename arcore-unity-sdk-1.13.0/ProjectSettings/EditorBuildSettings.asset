@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/GoogleARCore/Examples/HelloAR/Scenes/HelloAR.unity
     guid: e6a6fa04348cb45c9b0221eb19c946da
   - enabled: 0
@@ -23,7 +23,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/GoogleARCore/Examples/ObjectManipulation/Scenes/ObjectManipulation.unity
     guid: 9dba7e74f4d2b410f90b920f80528d44
-  - enabled: 1
+  - enabled: 0
     path: Assets/GoogleARCore/Examples/FaceMesh/Scenes/FaceMesh.unity
     guid: c1df47833a61a4390bc03af4b60ec264
+  - enabled: 0
+    path: Assets/GoogleARCore/Examples/AddAnchorsEverywhere/Scenes/AddAnchorsEverywhere.unity
+    guid: 4fcc15a39832d458f9ca3f9f2374ff87
+  - enabled: 0
+    path: Assets/GoogleARCore/Examples/ChangeBasedOnDistance/Scenes/ChangeBasedOnDistance.unity
+    guid: a797e7b57f09942a49c02f8a7f5659e5
   m_configObjects: {}

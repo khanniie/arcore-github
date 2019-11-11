@@ -9,6 +9,15 @@
     using System.Runtime.InteropServices;
     using UnityEngine.UI;
 
+/* the below code checks, at compile time, if we are in the unity editor,
+* and if we are, we check for the mouse down button
+* otherwise, we are looking for finger touches instead, and then it compiles the code accordingly 
+* Google C# Preprocessor directives for more info if interested*/
+#if UNITY_EDITOR
+    // Set up touch input propagation while using Instant Preview in the editor.
+    using Input = InstantPreviewInput;
+#endif
+
     public class AddAnchorsEverywhere : MonoBehaviour
     {
 
@@ -25,15 +34,7 @@
         * Then, we call UpdateState to update our counter for deleting objects */
         void Update()
         {
-            /* the below code checks, at compile time, if we are in the unity editor,
-            * and if we are, we check for the mouse down button
-            * otherwise, we are looking for finger touches instead, and then it compiles the code accordingly 
-            * Google C# Preprocessor directives for more info if interested*/
-    #if UNITY_EDITOR
-            if (Input.GetMouseButtonDown (0)) 
-    #else
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-    #endif
             {
                 AddObject();
             }
@@ -67,7 +68,9 @@
             if (timeUntilRemove <= 0.0f && clones.Count > 0)
             {
                 GameObject clone = (GameObject)clones[0];
+                Debug.Log(clone);
                 clones.RemoveAt(0);
+                Destroy(clone);
                 timeUntilRemove = originalTimeUntilRemove;
             }
         }
